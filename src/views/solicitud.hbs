@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Solicitud</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 800px;
+        }
+        .form-control {
+            border-radius: 0.25rem;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .card {
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        h2 {
+            font-weight: 500;
+        }
+        .form-group label {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Formulario de Solicitud</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/solicitud" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="licencia">Licencia (PDF):</label>
+                        <input type="file" class="form-control-file" id="licencia" name="licencia" accept=".pdf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="diasAlquiler">Días de Alquiler:</label>
+                        <input type="number" class="form-control" id="diasAlquiler" name="diasAlquiler" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nroPasajeros">Número de Pasajeros:</label>
+                        <input type="number" class="form-control" id="nroPasajeros" name="nroPasajeros" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comentario">Comentario:</label>
+                        <textarea class="form-control" id="comentario" name="comentario"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehiculoId">ID del Vehículo:</label>
+                        <input type="number" class="form-control" id="vehiculoId" name="vehiculoId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estadoId">ID del Estado:</label>
+                        <input type="number" class="form-control" id="estadoId" name="estadoId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="usuarioId">ID del Usuario:</label>
+                        <input type="number" class="form-control" id="usuarioId" name="usuarioId" required>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
